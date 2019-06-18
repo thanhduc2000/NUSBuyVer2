@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.slider{
+    width: 800px;
+    height: 400px;
+    background: url("https://www.sleepzone.ie/uploads/images/PanelImages800x400/TheBurren/General/sleepzone_hostels_burren_800x400_14.jpg");
+    margin: 100px auto;
+    animation: slide 20s infinite;
+  }
+  
+  @keyframes slide {
+    25%{
+      background: url("https://www.conceptcarz.com/images/Volvo/2009_Volvo_S60_Concept-Image-01-800.jpg");
+    }
+    50%{
+      background: url("https://blog.myfico.com/wp-content/uploads/2016/10/Cloud-blog-800x400.png");
+    }
+    75%{
+      background: url("https://www.visittelluride.com/site/assets/files/35060/1435623441c31ef6ab3a0.800x400.jpg");
+    }
+    100%{
+      background: url("https://www.sleepzone.ie/uploads/images/PanelImages800x400/TheBurren/General/sleepzone_hostels_burren_800x400_14.jpg");
+    }
+  }
+
+.item1 { grid-area: header; }
+.item2 { grid-area: description; }
+.item3 { grid-area: price; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header description description description description description description description description '
+    'header header header description description description description description description description description'
+    'header header header description description description description description description description description'
+    'header header header description description description description description description description description'
+    'header header header price price price price price price price price';
+  grid-gap: 0px;
+  background-color: powderblue;
+  padding: 0px;
+}
+
+.grid-container > div {
+  background-color: powderblue;
+  text-align: left;
+  padding: 60px;
+  font-size: 10px;
+  font-family: sans-serif;
+  color: black
+}
+
+.button {
+          background-color: black;
+          border: none;
+          color: white;
+          padding: 8px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 4px 2px;
+          cursor: pointer;
+}
+
+h1 {
+    color: black;
+    /* tuong tu rgb co alpha la do mo mau */
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+}
+</style>
+
+<div class ="slider">
+
+</div>
+
+<div class="grid-container">
+  <div class="item1"><h1>{{ object.title }}</h1></div>
+  <div class="item2">Description: {{ object.description }}</div>
+  <div class="item3">Price: {{ object.price }}</div>  
+  <button onclick="location.href = 'http://127.0.0.1:8000/products/{{ object.id }}/update/';" id="myButton" class="button" >Update</button>
+  <button onclick="location.href = 'http://127.0.0.1:8000/products/{{ object.id }}/delete/';" id="myButton" class="button" >Delete</button>
+  <button onclick="location.href = 'http://127.0.0.1:8000/products/';" id="myButton" class="button" >Back</button>
+</div>
+<br> 
+
+{% comment %} <h1>{{ object.title }}</h1>
+<p>{{ object.description }}</p>
+<p>{{ object.price }}</p> {% endcomment %}
+
+{% comment %} <button onclick="location.href = 'http://127.0.0.1:8000/products/{{ object.id }}/update/';" id="myButton" class="float-left submit-button" >Update</button>
+<button onclick="location.href = 'http://127.0.0.1:8000/products/{{ object.id }}/delete/';" id="myButton" class="float-left submit-button" >Delete</button>
+<button onclick="location.href = 'http://127.0.0.1:8000/products/';" id="myButton" class="float-left submit-button" >Back</button> {% endcomment %}
+{% endblock %}
