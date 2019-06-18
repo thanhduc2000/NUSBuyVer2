@@ -1,0 +1,119 @@
+body {
+    background-color: powderblue;
+    margin: 0px;
+}
+
+h1 {
+    color: black;
+    /* tuong tu rgb co alpha la do mo mau */
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+}
+
+textarea {
+    display: block;
+}
+
+nav {
+    font-size: 14px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+div {
+    width: 119px;
+    /* border: solid 1px; */
+    float: left;
+    padding: 10px 0;
+    background-color: black;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-family: sans-serif;
+    background-color: orange;
+    color: white;
+}
+
+/* a:first-child div {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+a:last-child div {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+} */
+
+.button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+div.products {
+    width: 1000px; display: table; margin: auto;
+}
+
+div.products h3{
+    float: left;color: black;
+    background: orange;
+    margin: 0px; line-height: 41 px;
+    text-indent: 40 px;
+    font-weight: normal; font-size: 22px;
+}
+
+div.products ul,
+div.products ul li{
+    float: left; padding: 0px; margin: 0px; list-style: none; 
+}
+div.products ul{
+    width: 100%;
+    margin-top: 20px;
+}
+div.products ul li{
+    width: 25%;
+}
+
+.slider{
+    width: 800px;
+    height: 400px;
+    background: url("1.jpg");
+    margin: 100px auto;
+    animation: slide 20s infinite;
+  }
+  
+  @keyframes slide {
+    25%{
+      background: url("2.jpg");
+    }
+    50%{
+      background: url("3.jpg");
+    }
+    75%{
+      background: url("4.jpg");
+    }
+    100%{
+      background: url("1.jpg");
+    }
+  }
